@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor - The AI-first Code Editor</title>
+    <meta name="description" content="Cursor is an AI-powered code editor built to make you extraordinarily productive. Experience Copilot++, Command K, and deep codebase understanding.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i data-lucide="terminal-square"></i>
+                <span>Cursor</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#enterprise">Enterprise</a>
+                <a href="#blog">Blog</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" id="loginBtn">Log in</button>
+                <button class="btn btn-primary" id="downloadNavBtn">Download <span class="os-text">for Mac</span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    Cursor 0.45 is out now
+                </div>
+                <h1 class="hero-title">
+                    The <span>AI-first</span> <br> Code Editor
+                </h1>
+                <p class="hero-subtitle">
+                    Built to make you extraordinarily productive, Cursor is the best way to code with AI.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-glow btn-large" id="downloadHeroBtn">
+                        <i data-lucide="download"></i> Download <span class="os-text">for Mac</span>
+                    </button>
+                    <p class="hero-subtext">Free for individuals, no credit card required.</p>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-tabs">
+                            <div class="browser-tab active">
+                                <i data-lucide="file-code-2"></i> page.tsx
+                            </div>
+                            <div class="browser-tab">
+                                <i data-lucide="file-json-2"></i> package.json
+                            </div>
+                        </div>
+                    </div>
+                    <div class="browser-body">
+                        <div class="sidebar">
+                            <div class="sidebar-item active"><i data-lucide="files"></i></div>
+                            <div class="sidebar-item"><i data-lucide="search"></i></div>
+                            <div class="sidebar-item"><i data-lucide="git-branch"></i></div>
+                            <div class="sidebar-item"><i data-lucide="bot"></i></div>
+                        </div>
+                        <div class="editor-content">
+                            <div class="line-numbers">
+                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                            </div>
+                            <pre class="code-block"><code><span class="keyword">import</span> { useState, useEffect } <span class="keyword">from</span> <span class="string">'react'</span>;
+
+<span class="keyword">export default function</span> <span class="function">Hero</span>() {
+  <span class="comment">// Cursor is predicting your next edit</span>
+  <span class="keyword">const</span> [isHovered, setIsHovered] = <span class="function">useState</span>(<span class="boolean">false</span>);
+  
+  <span class="return">return</span> (
+    <span class="tag">&lt;div</span> <span class="attr">className</span>=<span class="string">"premium-header"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;h1&gt;</span>Hello World<span class="tag">&lt;/h1&gt;</span>
+      <div class="ai-suggestion">      <span class="tag">&lt;p&gt;</span>Built with Cursor<span class="tag">&lt;/p&gt;</span> <span>Tab to accept</span></div>
+    <span class="tag">&lt;/div&gt;</span>
+  );
+}</code></pre>
+                            
+                            <div class="command-k-box">
+                                <div class="cmd-k-input">
+                                    <i data-lucide="sparkles"></i>
+                                    <span>Add a subtle animation to the header component...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <h2 class="section-title">Code faster than ever before.</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon"><i data-lucide="brain-circuit"></i></div>
+                    <h3>Copilot++</h3>
+                    <p>Suggests your next edit, block of code, or entire function. It learns from your codebase to write code exactly how you would.</p>
+                </div>
+                
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon"><i data-lucide="keyboard"></i></div>
+                    <h3>Command K</h3>
+                    <p>Highlight code and press Cmd+K to edit it with AI. Generate new code from scratch or refactor existing code in seconds.</p>
+                </div>
+                
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon"><i data-lucide="database"></i></div>
+                    <h3>Context Aware</h3>
+                    <p>Cursor understands your entire codebase. Chat with your repo, ask questions about specific files, docs, and codebases.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonial-section">
+            <div class="testimonial glass-panel">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Cursor has completely changed how I write code. I feel like I have a senior engineer sitting next to me at all times, making me 10x faster."</p>
+                <div class="author">
+                    <div class="author-avatar"><i data-lucide="user"></i></div>
+                    <div class="author-info">
+                        <strong>Sarah Jenkins</strong>
+                        <span>Staff Software Engineer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i data-lucide="terminal-square"></i>
+                <span>Cursor</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="#">Download</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Enterprise</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Forum</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Anysphere. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
