@@ -1,5 +1,7 @@
 # Cursor Training Project
 
+![Cursor Logo](cursor.webp)
+
 This project is a simple landing page for a cursor training program. It is built with HTML, CSS, and JavaScript.
 
 ## Agents
@@ -18,7 +20,9 @@ Here are some useful prompts you can use with the `@Browser` agent in this proje
 
 ## Hooks
 
-Cursor hooks are custom scripts that automate actions at specific points in the agent workflow. This project uses the following hooks:
+Cursor hooks are custom scripts that automate actions at specific points in the agent workflow. Please make sure that the `.cursor/hooks` scripts are excutables : `chmod -R 777 .cursor/hooks`
+
+This project uses the following hooks:
 
 - **before-shell.sh** : Runs _before_ executing a shell command.  
   **Sample use case:**
@@ -39,6 +43,7 @@ Cursor hooks are custom scripts that automate actions at specific points in the 
 
 - **on-stop.sh** : Runs when a Cursor agent task finishes (completed, failed, or aborted).  
   **Sample log entry created:**
+
   ```
   [2024-06-04 14:01:18] task completed (conversation: 1234-5678)
   ```

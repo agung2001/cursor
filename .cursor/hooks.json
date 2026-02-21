@@ -2,13 +2,13 @@
   "version": 1,
   "hooks": {
     "afterFileEdit": [
-      { "command": "hooks/on-edit.sh" }
+      { "command": ".cursor/hooks/on-edit.sh" }
     ],
     "beforeShellExecution": [
-      { "command": "hooks/before-shell.sh" }
+      { "command": ".cursor/hooks/before-shell.sh" }
     ],
     "stop": [
-      { "command": "hooks/on-stop.sh" }
+      { "command": ".cursor/hooks/on-stop.sh" }
     ]
   }
 }
