@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      { "command": "hooks/on-edit.sh" }
+    ],
+    "beforeShellExecution": [
+      { "command": "hooks/before-shell.sh" }
+    ],
+    "stop": [
+      { "command": "hooks/on-stop.sh" }
+    ]
+  }
+}
