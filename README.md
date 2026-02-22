@@ -98,3 +98,7 @@ The `.cursor/skills` directory contains agent "skills"—modular, task-focused b
 
 - `/brainstorming` : brainstorming features or ideas for the app
 - `/deploy` : deploy the site via SFTP
+
+## Subagents
+
+- `/security-auditor` : doing full project security audit
