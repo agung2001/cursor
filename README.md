@@ -97,3 +97,4 @@ Workflows :
 The `.cursor/skills` directory contains agent "skills"—modular, task-focused behaviors that extend what Cursor AI can do within your project. Unlike rules (which passively constrain and shape edits), skills are **actively invoked** to accomplish well-defined actions, automations, or workflows.
 
 - `/brainstorming` : brainstorming features or ideas for the app
+- `/deploy` : deploy the site via SFTP
