@@ -13,11 +13,6 @@ Here are some useful prompts you can use with the `@Browser` agent in this proje
 - `@Browser Open http://localhost:8000` : Opens the site in your default web browser (ensure the PHP server is running).
 - `@Browser Review Design` : Review the current site design.
 
-## Commands
-
-- open-browser.md : Open project in default browser
-- php-server.md : Run php server command
-
 ## Hooks
 
 Cursor uses **hook scripts** to enhance safety, auditing, and automation during development. Hooks reside in `.cursor/hooks/` and must be executable. Make them so with:
@@ -74,3 +69,25 @@ By following the guidelines in `.cursor/rules`, the codebase remains consistent,
 NOTE :
 
 - AGENTS.md is unecessary if your specificy project rules by files.
+
+## Commands
+
+The `.cursor/commands` directory houses reusable command and workflow definitions for Cursor. These Markdown (`.md`) files enable automation of common development tasks, enforce conventions, and streamline collaboration between humans and AI agents.
+
+### What You'll Find in `.cursor/commands`:
+
+Utils :
+
+- `utils/open-browser.md`: Opens your site in your default browser.
+- `utils/php-server.md`: Launches a local PHP server for simple development.
+- and more
+
+Workflows :
+
+- `workflows/code-review-checklist.md`: Provides a full checklist for reviewing code changes.
+- `workflows/create-issue.md`: Guides the creation of GitHub issues using standardized templates.
+- `workflows/setup-new-feature.md`: Walks you through setting up a clean environment for implementing a new feature.
+- and more
+
+> **Sample:**  
+> /workflows/create-issue create new issue in github current project, showing that the testimonial name should be changed to `Agung Sundoro`'
