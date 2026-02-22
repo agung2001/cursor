@@ -91,3 +91,9 @@ Workflows :
 
 > **Sample:**  
 > /workflows/create-issue create new issue in github current project, showing that the testimonial name should be changed to `Agung Sundoro`'
+
+## Skills
+
+The `.cursor/skills` directory contains agent "skills"—modular, task-focused behaviors that extend what Cursor AI can do within your project. Unlike rules (which passively constrain and shape edits), skills are **actively invoked** to accomplish well-defined actions, automations, or workflows.
+
+- `/brainstorming` : brainstorming features or ideas for the app
