@@ -1,0 +1,34 @@
+---
+description: File and folder layout of the project
+alwaysApply: true
+---
+
+# File Structure
+
+```
+cursor/
+├── index.html          # Single HTML page — all markup lives here
+├── style.css           # All styles — no CSS modules, no preprocessors
+├── script.js           # All client-side JS — no bundler
+├── README.md
+├── .gitignore
+└── .cursor/
+    ├── hooks.json          # Cursor lifecycle hooks config
+    ├── hooks/
+    │   ├── before-shell.sh # Blocks dangerous shell commands
+    │   ├── on-edit.sh      # Logs AI file edits to .cursor/logs/edits.log
+    │   └── on-stop.sh      # Logs sessions + macOS notification
+    ├── logs/               # Auto-generated; gitignored
+    │   ├── edits.log
+    │   └── sessions.log
+    ├── commands/
+    │   ├── php-server.md   # Slash command: start PHP dev server
+    │   └── open-browser.md # Slash command: open site in browser
+    └── rules/              # Cursor AI rules (this folder)
+```
+
+## Conventions
+
+- All source files are at the project root — no `src/` subdirectory
+- There is exactly one HTML file (`index.html`); do not add more pages
+- Do not introduce a build step, bundler, or package manager

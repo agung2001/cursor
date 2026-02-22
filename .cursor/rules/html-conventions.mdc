@@ -1,0 +1,42 @@
+---
+description: HTML authoring conventions — semantic markup and Lucide icon usage
+globs: **/*.html
+alwaysApply: false
+---
+
+# HTML Conventions
+
+## Lucide Icons
+
+This project uses [Lucide](https://lucide.dev) loaded via CDN. Icons are rendered with `<i>` tags and initialized by calling `lucide.createIcons()` once at the bottom of `<body>`.
+
+```html
+<!-- ✅ GOOD — use data-lucide attribute -->
+<i data-lucide="download"></i>
+<i data-lucide="terminal-square"></i>
+
+<!-- ❌ BAD — do not use emoji, image tags, or SVG inline for icons -->
+<img src="icon.svg" alt="download">
+⬇️
+```
+
+Always call `lucide.createIcons()` after the scripts load:
+
+```html
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- ... other scripts ... -->
+<script>
+    lucide.createIcons();
+</script>
+</body>
+```
+
+## Semantic Structure
+
+- Use `<nav>`, `<main>`, `<section>`, `<footer>` — avoid generic `<div>` wrappers for top-level layout
+- Each `<section>` should have a meaningful `id` for anchor navigation (e.g., `id="features"`)
+- Buttons that trigger JS actions use `<button>`; navigation links use `<a href="#">`
+
+## Attribute Order
+
+Prefer: `class` → `id` → `data-*` → event handlers

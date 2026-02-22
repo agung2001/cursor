@@ -1,0 +1,56 @@
+---
+description: JavaScript conventions — vanilla JS patterns, DOM handling, no frameworks
+globs: **/*.js
+alwaysApply: false
+---
+
+# JavaScript Conventions
+
+## No Frameworks or Build Tools
+
+This project uses **vanilla JavaScript only**. Do not introduce React, Vue, jQuery, or any npm dependencies.
+
+## Entry Point Pattern
+
+All code lives inside a single `DOMContentLoaded` listener in `script.js`:
+
+```js
+// ✅ GOOD — wrap everything in DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    // feature 1
+    // feature 2
+});
+
+// ❌ BAD — do not add inline <script> logic in index.html (except lucide.createIcons())
+```
+
+## DOM Selection
+
+```js
+// ✅ Prefer getElementById for unique elements
+const navbar = document.getElementById('navbar');
+
+// ✅ Use querySelectorAll for groups
+document.querySelectorAll('.os-text').forEach(el => { ... });
+
+// ❌ Avoid unnecessary repeated queries — store references in variables
+```
+
+## Event Handling
+
+- Attach listeners via `addEventListener`, never via `onclick=""` HTML attributes
+- Use arrow functions for inline callbacks; use named functions for reusable logic
+
+## Async / Timers
+
+- Use `setTimeout` / `setInterval` for animations and deferred work
+- Prefer `const` and `let`; never use `var`
+
+## Lucide Icons
+
+After dynamically adding new elements with `data-lucide` attributes, call `lucide.createIcons()` again to render them:
+
+```js
+container.innerHTML = '<i data-lucide="star"></i>';
+lucide.createIcons(); // re-run to pick up new icons
+```

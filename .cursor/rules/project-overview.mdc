@@ -1,0 +1,29 @@
+---
+description: Overview of the Cursor training project — purpose, stack, and design principles
+alwaysApply: true
+---
+
+# Project Overview
+
+This is a **static landing page** for the Cursor AI code editor, built as a training/demo project.
+
+## Stack
+
+- Plain HTML, CSS, and vanilla JavaScript — no build tools, no frameworks
+- [Lucide Icons](https://lucide.dev) loaded via CDN (`unpkg.com/lucide@latest`)
+- Google Fonts: **Inter** (UI) and **Fira Code** (monospace)
+
+## Design System
+
+- Dark theme only — base color `#000000`, elevated surfaces `#111111`
+- Two accent colors: `--accent-blue: #3b82f6` and `--accent-purple: #8b5cf6`
+- All design tokens are CSS custom properties defined in `:root` inside `style.css`
+- Glass-morphism panels via the `.glass-panel` utility class
+
+## Sections
+
+1. Navbar (fixed, becomes opaque on scroll)
+2. Hero — headline, CTA, editor mockup with typing animation
+3. Features grid — 3 cards
+4. Testimonial
+5. Footer

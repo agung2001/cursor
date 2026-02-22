@@ -1,0 +1,54 @@
+---
+description: CSS authoring conventions — no inline styles, token system, naming patterns
+globs: **/*.css
+alwaysApply: false
+---
+
+# CSS Conventions
+
+## No Inline Styles
+
+Never add `style="..."` attributes to HTML elements. All visual rules belong in `style.css`.
+
+```html
+<!-- ❌ BAD -->
+<div style="color: red; margin-top: 8px;">...</div>
+
+<!-- ✅ GOOD -->
+<div class="error-message">...</div>
+```
+
+```css
+/* style.css */
+.error-message {
+    color: red;
+    margin-top: 8px;
+}
+```
+
+## CSS Custom Properties
+
+All design tokens are defined in `:root` at the top of `style.css`. Always use them instead of hard-coded values.
+
+| Token | Value | Use for |
+|---|---|---|
+| `--bg-base` | `#000000` | Page background |
+| `--bg-elevated` | `#111111` | Cards, panels |
+| `--text-primary` | `#ffffff` | Headings, body |
+| `--text-muted` | `#888888` | Secondary text |
+| `--border-subtle` | `#333333` | Borders at rest |
+| `--border-hover` | `#555555` | Borders on hover |
+| `--accent-blue` | `#3b82f6` | Primary accent |
+| `--accent-purple` | `#8b5cf6` | Secondary accent |
+| `--font-ui` | Inter, system-ui | All UI text |
+| `--font-mono` | Fira Code, monospace | Code blocks |
+
+## Utility Classes
+
+- `.glass-panel` — frosted glass card (`rgba` background + `backdrop-filter: blur`)
+- `.btn`, `.btn-primary`, `.btn-ghost`, `.btn-glow`, `.btn-large` — button variants
+- Add new utilities at the end of `style.css`; do not create a separate file
+
+## Responsive Design
+
+Use `min-width` media queries (mobile-first). Breakpoint: `768px`.
