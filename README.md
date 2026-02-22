@@ -20,34 +20,53 @@ Here are some useful prompts you can use with the `@Browser` agent in this proje
 
 ## Hooks
 
-Cursor hooks are custom scripts that automate actions at specific points in the agent workflow. Please make sure that the `.cursor/hooks` scripts are excutables : `chmod -R 777 .cursor/hooks`
+Cursor uses **hook scripts** to enhance safety, auditing, and automation during development. Hooks reside in `.cursor/hooks/` and must be executable. Make them so with:
 
-This project uses the following hooks:
+```
+chmod -R 777 .cursor/hooks
+```
 
-- **before-shell.sh** : Runs _before_ executing a shell command.  
-  **Sample use case:**
-  - If a command like `rm -rf /` is attempted, the hook will block it and notify you with a message:
-    ```
-    Blocked: dangerous command detected — 'rm -rf /'
-    ```
-  - This helps prevent accidental or malicious execution of destructive commands.
+This project includes the following hooks:
 
-- **on-edit.sh** : Runs _after_ a file is modified by the AI.  
-  **Sample log entry created:**
+- **before-shell.sh**  
+  _When triggered:_ Right before any shell command is executed by the agent.  
+  _Purpose:_ Blocks dangerous commands (e.g., `rm -rf /`).  
+  _Behavior:_ If a risky command is detected, execution is prevented and a warning is shown:
 
   ```
-  [2024-06-04 13:30:12] edited: index.html (conversation: 1234-5678)
+  Blocked: dangerous command detected — 'rm -rf /'
   ```
 
-  - The log file is stored at `.cursor/logs/edits.log`. This provides a clear audit trail of AI-driven changes.
-
-- **on-stop.sh** : Runs when a Cursor agent task finishes (completed, failed, or aborted).  
-  **Sample log entry created:**
+- **on-edit.sh**  
+  _When triggered:_ Immediately after the AI modifies a project file.  
+  _Purpose:_ Logs all file edits made by the AI.  
+  _Behavior:_ A log entry is written to `.cursor/logs/edits.log` in this format:
 
   ```
-  [2024-06-04 14:01:18] task completed (conversation: 1234-5678)
+  [YYYY-MM-DD HH:MM:SS] edited: filename.ext (conversation: <id>)
   ```
 
-  - On macOS, you will also receive a desktop notification about the task status, such as "Task Complete" or "Task Failed".
+- **on-stop.sh**  
+  _When triggered:_ Whenever a Cursor agent task completes, fails, or is aborted.  
+  _Purpose:_ Provides a task completion audit trail.  
+  _Behavior:_ Records the event (including time and conversation ID) in `.cursor/logs/sessions.log`:
+  ```
+  [YYYY-MM-DD HH:MM:SS] task completed (conversation: <id>)
+  ```
+  _Extra:_ On macOS, a desktop notification appears summarizing the outcome (e.g., "Task Complete" or "Task Failed").
 
-These hooks help increase project safety, provide useful audit trails, and improve feedback while collaborating with Cursor agents.
+These hooks add safety, traceability, and clear feedback during collaboration with Cursor agents.
+
+## Rules
+
+The `.cursor/rules` directory contains project-specific conventions and documentation that guide AI and human contributors when editing the codebase. Each Markdown (`.mdc`) file describes standards for a particular aspect of the project, such as file structure, HTML best practices, CSS token usage, and JavaScript patterns.
+
+Key points:
+
+- **Always Applied Rules:** Some rules (like `file-structure.mdc` and `project-overview.mdc`) are always active, ensuring the project's global organization and stack are respected.
+- **Targeted Conventions:** Other rule files only apply to matching file types (e.g., `*.css`, `*.html`, `*.js`) and explain how to format, structure, and style code in those files.
+- **No Build Tools:** The rules enforce the project's vanilla HTML/CSS/JS stack—no frameworks, preprocessors, or bundlers are allowed.
+- **Design Tokens & Utility Classes:** They specify how to use CSS custom properties and shared utility classes.
+- **Icon Use & Markup:** Clear instructions are given for semantic structure and using Lucide icons correctly.
+
+By following the guidelines in `.cursor/rules`, the codebase remains consistent, readable, and easy to maintain for both agents and humans.

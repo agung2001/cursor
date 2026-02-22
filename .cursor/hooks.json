@@ -2,13 +2,13 @@
   "version": 1,
   "hooks": {
     "afterFileEdit": [
-      { "command": ".cursor/hooks/on-edit.sh" }
+      { "command": "python3 .cursor/hooks/on-edit.py" }
     ],
     "beforeShellExecution": [
-      { "command": ".cursor/hooks/before-shell.sh" }
+      { "command": "python3 .cursor/hooks/before-shell.py" }
     ],
     "stop": [
-      { "command": ".cursor/hooks/on-stop.sh" }
+      { "command": "python3 .cursor/hooks/on-stop.py" }
     ]
   }
 }
