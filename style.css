@@ -171,9 +171,11 @@ a { color: var(--text-primary); text-decoration: none; }
     letter-spacing: -0.02em;
 }
 
-.logo i {
+.logo i,
+.logo-img {
     width: 24px;
     height: 24px;
+    object-fit: contain;
 }
 
 .nav-links {
