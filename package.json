@@ -1,0 +1,25 @@
+{
+  "name": "cursor-landing-page",
+  "version": "1.0.0",
+  "description": "Static landing page for the Cursor AI code editor, built as a training/demo project.",
+  "author": "agung2001 <muhagung2001@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/agung2001/cursor#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agung2001/cursor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agung2001/cursor/issues"
+  },
+  "keywords": [
+    "cursor",
+    "landing-page",
+    "static-site",
+    "vanilla-js",
+    "demo"
+  ],
+  "scripts": {
+    "start": "php -S 0.0.0.0:8000"
+  }
+}
