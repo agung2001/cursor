@@ -1,0 +1,10 @@
+# SFTP Deploy Configuration
+# Copy this file to deploy.config and fill in your values.
+# deploy.config is gitignored — never commit it.
+
+SFTP_HOST=your-server.com
+SFTP_USER=your-username
+REMOTE_PATH=/var/www/html
+
+# Optional: path to a non-default SSH private key
+# SSH_KEY=~/.ssh/my_key
