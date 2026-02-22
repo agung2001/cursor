@@ -70,3 +70,7 @@ Key points:
 - **Icon Use & Markup:** Clear instructions are given for semantic structure and using Lucide icons correctly.
 
 By following the guidelines in `.cursor/rules`, the codebase remains consistent, readable, and easy to maintain for both agents and humans.
+
+NOTE :
+
+- AGENTS.md is unecessary if your specificy project rules by files.
